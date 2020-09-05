@@ -4,7 +4,7 @@
 
 #### To install and run application:
 
-1. git clone 
+1. git clone https://github.com/ullf/randompictures.git
 2. cd <app_folder>
 3. npm install
 4. npm run build
