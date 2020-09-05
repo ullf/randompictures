@@ -1,0 +1,11 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><link rel="manifest" href="manifest.webmanifest"/><script async src="https://unpkg.com/pwacompat" crossorigin="anonymous"></script><title>Random picture</title></head><body><script>if ('serviceWorker' in navigator) {
+                window.addEventListener('load', function() {
+                    navigator.serviceWorker.register('sw.js').then(function(registration) {
+                    // Registration was successful
+                    console.log('ServiceWorker registration successful with scope: ', registration.scope);
+                    }, function(err) {
+                        // registration failed :(
+                         console.log('ServiceWorker registration failed: ', err);
+                    });
+                });
+            }</script><div id="root"></div><script src="main.js"></script></body></html>

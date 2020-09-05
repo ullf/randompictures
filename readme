@@ -1,0 +1,11 @@
+To build and application:
+	1)Unpack archive
+	2)cd folder_name
+	3)npm install
+	4)npm run build
+	5)npm start
+
+To setup application it's needed to modify packaje.json file.
+There is going to be options for build and run it's possible to setup a host with --host flag and mode with --mode flag.
+
+
