@@ -21,9 +21,9 @@ class Picture extends Component {
                 <Theme.Consumer>
                     {(context) => (
                         <React.Fragment>
+                            <img src={context.state.src} />
                             <button onClick={context.handle}>New photos</button>
                             <button onClick={context.next}>next</button>
-                            <img src={context.src} />
                         </React.Fragment>
                     )}
                 </Theme.Consumer>

@@ -52,7 +52,7 @@ class ContextProvider extends Component{
                     console.log("ok");
                 }
             }
-                }>
+            }>
                 {this.props.children}
             </Theme.Provider>
         )
