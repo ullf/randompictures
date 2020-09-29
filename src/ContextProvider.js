@@ -8,7 +8,7 @@ class ContextProvider extends Component{
         super(props);
         this.state = {
             counter:0,
-            arr:null,
+            arr:[],
             swipe:false,
             loading:true,
             src:""
@@ -23,22 +23,18 @@ class ContextProvider extends Component{
                     
                     handle: (e) => {
                         console.log("handle");
-                        const result = fetch("https://picsum.photos/550/550"
-                        )
-                        .then(res => {
-                        this.setState({
-                            counter:0,
-                            arr:res,
-                            loading:true
-                        });
-                    });
-                    this.setState(
-                        {
-                            loading:false,
-                            src:this.state.arr.url
+                        for(var i=0;i<5;i++) {
+                            fetch("https://picsum.photos/550/550")
+                            .then(res =>  {
+                                this.state.arr.push(res.url);
+                                const tmp = this.state.arr;
+                                this.setState({
+                                    counter:0,
+                                    arr:tmp,
+                                    loading:true
+                                })
+                            });
                         }
-                    );
-                    console.log(this.state.arr);
                 },
 
                 next:() => {
@@ -49,7 +45,16 @@ class ContextProvider extends Component{
                             src:this.state.arr.url
                         }
                     )
-                    console.log("ok");
+                },
+
+                back:() => {
+                    const next = this.state.counter-1;
+                    this.setState (
+                        {
+                            counter:next,
+                            src:this.state.arr.url
+                        }
+                    )
                 }
             }
             }>

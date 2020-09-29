@@ -7,30 +7,20 @@ class Picture extends Component {
     }
 
     render() {
-        /*
-        {(context) => (
-                       <React.Fragment>
-                           <button onClick={context.handle}>New photos</button>
-                           <button onClick={context.next}>next</button>
-                           <img src={context.src} />
-                       </React.Fragment>
-                   )}
-        */
+      
         return (
             <div>
                 <Theme.Consumer>
                     {(context) => (
                         <React.Fragment>
-                            <img src={context.state.src} />
+                            <img src={context.state.arr[context.state.counter]} />
                             <button onClick={context.handle}>New photos</button>
                             <button onClick={context.next}>next</button>
+                            <button onClick={context.back}>back</button>
                         </React.Fragment>
                     )}
                 </Theme.Consumer>
             </div>
-            //<div>
-               //<img src={this.props.src} onMouseDown={this.props.drag} onTouchStart={this.props.onTouchStart} onTouchMove={this.props.onTouchMove} onTouchEnd={this.props.onTouchEnd} width="550px" height="550px" />
-            //</div>
         )
     }
 }
